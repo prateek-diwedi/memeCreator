@@ -35,17 +35,18 @@ export default function MediaCard() {
 
   return (
     <div className="ImageCard">
-      { data && data.map((memes, id) => (
+      { data && data.memes.map((memes) => (
       <Card className={classes.root}>
         <CardActionArea>
           <CardMedia
+            key= {memes.id}
             className={classes.media}
-            image="https://i.imgflip.com/30b1gx.jpg"
+            image={memes.url}
             title="Contemplative Reptile"
           />
           <CardContent>
             <Typography gutterBottom variant="h5" component="h2">
-              Lizard
+              {memes.name}
           </Typography>
 
           </CardContent>
